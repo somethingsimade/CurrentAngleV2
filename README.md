@@ -3,6 +3,8 @@ Since it was leaked, i shouldnt have shared, here it is skids. (friendly fire?)
 
 Credits to geecee for the original method. I re found the method, and mixed with my old reanimate, they leaked it, after i made it private. Now it is spreading, lol, so ill just get the job done.
 
+# httpget
+```lua
 -- SETTINGS --
 local settings = _G
 
@@ -43,3 +45,4 @@ repeat task.wait() until finished
 -- yield is if the fling function will yield
 
 -- you can put your converted script under here
+```
