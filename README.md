@@ -3,6 +3,8 @@ Since it was leaked, i shouldnt have shared, here it is skids. (friendly fire?)
 
 Credits to geecee for the original method. I re found the method, and mixed with my old reanimate, they leaked it, after i made it private. Now it is spreading, lol, so ill just get the job done.
 
+IT DOESNT RUN ON ITS OWN, please put the script in "-- u paste the script here for now, theres no loadstring httpget for now." (replace it)
+
 # httpget
 ```lua
 -- SETTINGS --
