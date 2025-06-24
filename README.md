@@ -6,6 +6,9 @@ Credits to geecee for the original method. I re found the method, and mixed with
 
 IT DOESNT RUN ON ITS OWN, please put the script in "-- u paste the script here for now, theres no loadstring httpget for now." (replace it)
 not placeholder anymore: it is open now due to the oxide server release, no blaming on them.
+
+also this was made like a week ago (as the time of writing, check commits)
+
 # httpget
 ```lua
 -- SETTINGS --
