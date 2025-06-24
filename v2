@@ -87,6 +87,8 @@ local respawncharacter = (function() if _G["Respawn character"] == nil then retu
 
 local instantrespawn = (function() if _G["Instant respawn"] == nil then return false else return _G["Instant respawn"] end end)()
 
+local hiderootpart = (function() if _G["Hide HumanoidRootPart"] == nil then return false else return _G["Hide HumanoidRootPart"] end end)()
+
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 if not LocalPlayer.Character then
