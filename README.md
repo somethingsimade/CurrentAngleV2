@@ -8,6 +8,11 @@ not placeholder anymore: it is open now due to the oxide server release, no blam
 
 also this was made like a week ago (as the time of writing, check commits)
 
+MY THEORY: 1000000% UNKNOWN NOT FACTS
+THE VERSION EMPER GOT..... is mine?!!?!?!?!
+WOOOO SO SCARY THGEORRY
+cuz look they have game = game and uuhh other stuff idk like vector3zero HAHA here wow im so W im so funny too im schizophrenic
+
 # httpget
 ```lua
 -- SETTINGS --
