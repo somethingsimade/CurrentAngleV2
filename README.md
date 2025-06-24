@@ -33,7 +33,7 @@ settings["Names to exclude from transparency"] = {
 local finished = false
 
 task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2")()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 end)
 
 repeat task.wait() until finished
