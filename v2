@@ -225,7 +225,7 @@ local task_spawn = task.spawn
 local function stepReanimate()
 	task_spawn(function()
 		--// YES it is unstable. im working on optimizing (later)
-		if hiderootpart and then
+		if hiderootpart then
 			newcharRoot.CFrame = poscac + Vector3_new(0, 0, math_random(1, 2) / 326.19)
 		else
 			newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 326.19)
