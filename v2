@@ -345,7 +345,7 @@ workspace.CurrentCamera.CameraSubject = fakeChar:WaitForChild("Humanoid")
 
 finished = true
 
-coroutine.resume(coroutine.wrap(function()
+local runanim = coroutine.wrap(function()
 	if usedefaultanims then
 		local script = fakeChar:FindFirstChild("Animate") or (function()
 			local temp = Instance.new("LocalScript", fakeChar)
@@ -936,4 +936,5 @@ coroutine.resume(coroutine.wrap(function()
 		end
 
 	end
-end))
+end)
+runanim()
