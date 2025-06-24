@@ -223,7 +223,6 @@ local ToObjectSpace = CFrame.new().ToObjectSpace
 local ToEulerAnglesXYZ = CFrame.new().ToEulerAnglesXYZ
 local task_spawn = task.spawn
 local function stepReanimate()
-if flinging then return end
 	task_spawn(function()
 		--// YES it is unstable. im working on optimizing (later)
 		if hiderootpart and then
