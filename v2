@@ -224,6 +224,7 @@ local ToEulerAnglesXYZ = CFrame.new().ToEulerAnglesXYZ
 local task_spawn = task.spawn
 local function stepReanimate()
 	task_spawn(function()
+    if flinging then return end
 		--// YES it is unstable. im working on optimizing (later)
 		if hiderootpart then
 			newcharRoot.CFrame = poscac + Vector3_new(0, 0, math_random(1, 2) / 326.19)
