@@ -1,7 +1,7 @@
 # CurrentAngleV2
 Since it was leaked, i shouldnt have shared, here it is skids. (friendly fire?)
 
-Credits to geecee for the original method. I re found the method, and mixed with my old reanimate, they leaked it (not geecee), after i made it private. Now it is spreading, lol, so ill just get the job done.
+Credits to geecee for the original method. I re found the method, and mixed with my old reanimate, they leaked it (not geecee), after i made it private. Now it is spreading, lol, so ill just get the job done. (they literally released their full file version.)
 
 IT DOESNT RUN ON ITS OWN, please put the script in "-- u paste the script here for now, theres no loadstring httpget for now." (replace it)
 not placeholder anymore: it is open now due to the oxide server release, no blaming on them.
