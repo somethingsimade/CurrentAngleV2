@@ -224,7 +224,7 @@ local ToEulerAnglesXYZ = CFrame.new().ToEulerAnglesXYZ
 
 local task_spawn = task.spawn
 local function stepReanimate()
-	task_spawn(function()
+	--[[task_spawn(function()]]
     if flinging then return end
 		--// YES it is unstable. im working on optimizing (later)
 		if hiderootpart then
@@ -257,7 +257,7 @@ gameNewIndex(jointmapping[joint], "DesiredAngle", angle)
 				RCA6dToCFrame(jointmapping[joint], limb, newChar.Torso)
 			end
 		end
-	end)
+	--[[end)]]
 end
 
 local function setdestroyheight(height)
@@ -343,7 +343,7 @@ end
 
 local RunService = game:GetService("RunService")
 
-RunService.Heartbeat:Connect(stepReanimate)
+RunService.PostSimulation:Connect(stepReanimate)
 
 local humanoidnewchar = newChar:WaitForChild("Humanoid")
 
