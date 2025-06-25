@@ -13,6 +13,10 @@ THE VERSION EMPER GOT..... is mine?!!?!?!?!
 WOOOO SO SCARY THGEORRY
 cuz look they have game = game and uuhh other stuff idk like vector3zero HAHA here wow im so W im so funny too im schizophrenic
 
+# It would be nice to have credits.. just leaving this here..
+![Interesing](https://github.com/somethingsimade/CurrentAngleV2/blob/main/justleavingthishere.png)
+
+
 # httpget
 ```lua
 -- SETTINGS --
