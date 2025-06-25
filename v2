@@ -13,17 +13,27 @@ local debug_info = debug.info
 
 local gameIndex
 local gameNewIndex
+local CFrameIndex
+
+local emptyCFrame = CFrame.new()
 
 local getrawmetatableworks = false
 local isindexsupported = false
 
 if getrawmetatable then
 	local s, r = pcall(getrawmetatable, game)
+	local success, res = pcall(getrawmetatable, emptyCFrame)
+
 	if s then  
 		if r.__index then
 			gameIndex = r.__index
 			gameNewIndex = r.__newindex
 			getrawmetatableworks = true
+		end
+	end
+	if success and s then
+		if res.__index then
+			CFrameIndex = res.__index
 		end
 	end
 end
@@ -40,6 +50,12 @@ if not getrawmetatableworks then
 	end, function()
 		gameNewIndex = debug_info(2, "f")
 	end)
+
+	xpcall(function()
+		return emptyCFrame[{}]
+	end, function()
+		CFrameIndex = debug_info(2, "f")
+	end)
 end
 
 local successtest, err = pcall(function()
@@ -54,6 +70,24 @@ if not successtest then
 	end
 else
 	isindexsupported = true
+end
+
+if not gameIndex then
+	 gameIndex = function(self, key)
+		return self[key]
+	 end
+end
+
+if not gameNewIndex then
+	gameNewIndex = function(self, key, new)
+		self[key] = new
+	end
+end
+
+if not CFrameIndex then
+ CFrameIndex = function(self, key, new)
+		self[key] = new
+	end
 end
 
 local zeropointone = 0.1
@@ -208,19 +242,21 @@ local jointmapping = {
 	["Right Hip"] = newcharTorso:WaitForChild("Right Hip")
 }
 
+local Inverse = emptyCFrame.Inverse
+local ToAxisAngle = emptyCFrame.ToAxisAngle
+local ToObjectSpace = emptyCFrame.ToObjectSpace
+local ToEulerAnglesXYZ = emptyCFrame.ToEulerAnglesXYZ
+
 local function RCA6dToCFrame(Motor6D, TargetPart, ReferencePart)
-	local rel = ReferencePart.CFrame:Inverse() * TargetPart.CFrame
-	local delta = Motor6D.C0:Inverse() * rel * Motor6D.C1
-	local axis, angle = delta:ToAxisAngle()
+	local rel = Inverse(gameIndex(ReferencePart, "CFrame")) * gameIndex(TargetPart, "CFrame")
+	local delta = Inverse(gameIndex(Motor6D, "C0")) * rel * gameIndex(Motor6D, "C1")
+	local axis, angle = ToAxisAngle(delta)
 	local newangle = axis * angle
-	sethiddenproperty(Motor6D, 'ReplicateCurrentOffset6D', delta.Position)
+	sethiddenproperty(Motor6D, 'ReplicateCurrentOffset6D', CFrameIndex(delta, "Position"))
 	sethiddenproperty(Motor6D, 'ReplicateCurrentAngle6D', newangle)
 end
 
-local poscac = CFrame.new(255, 255, 0)
-
-local ToObjectSpace = CFrame.new().ToObjectSpace
-local ToEulerAnglesXYZ = CFrame.new().ToEulerAnglesXYZ
+local poscache = CFrame.new(255, 255, 0)
 
 local task_spawn = task.spawn
 local function stepReanimate()
@@ -228,7 +264,7 @@ local function stepReanimate()
     if flinging then return end
 		--// YES it is unstable. im working on optimizing (later)
 		if hiderootpart then
-			newcharRoot.CFrame = poscac + Vector3_new(0, 0, math_random(1, 2) / 326.19)
+			newcharRoot.CFrame = poscache + Vector3_new(0, 0, math_random(1, 2) / 326.19)
 		else
 			newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 326.19)
 		end
