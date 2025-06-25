@@ -221,6 +221,7 @@ local poscac = CFrame.new(255, 255, 0)
 
 local ToObjectSpace = CFrame.new().ToObjectSpace
 local ToEulerAnglesXYZ = CFrame.new().ToEulerAnglesXYZ
+
 local task_spawn = task.spawn
 local function stepReanimate()
 	task_spawn(function()
@@ -238,7 +239,21 @@ local function stepReanimate()
 		RCA6dToCFrame(rootjoint, limbmapping["RootJoint"], newcharRoot)
 
 		for joint, limb in pairs(limbmapping) do
+			local relativecframe = ToObjectSpace(limb.CFrame, gameIndex(fakecharTorso, "CFrame"))
+			local pitch, yaw, _ = ToEulerAnglesXYZ(relativecframe)
+
+	local angle = 0
+
+	if joint == "Neck" or joint == "RootJoint" then
+		angle = -yaw
+	elseif joint == "Left Shoulder" or joint == "Left Hip" then
+		angle = pitch
+	elseif joint == "Right Shoulder" or joint == "Right Hip" then
+		angle = -pitch
+	end
+
 			if joint ~= "RootJoint" then
+gameNewIndex(jointmapping[joint], "DesiredAngle", angle)
 				RCA6dToCFrame(jointmapping[joint], limb, newChar.Torso)
 			end
 		end
