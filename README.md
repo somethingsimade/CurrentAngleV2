@@ -15,7 +15,7 @@ cuz look they have game = game and uuhh other stuff idk like vector3zero HAHA he
 
 # It would be nice to have credits.. just leaving this here..
 ![Interesing](https://github.com/somethingsimade/CurrentAngleV2/blob/main/justleavingthishere.png)
-
+![what]([https://github.com/somethingsimade/CurrentAngleV2/blob/main/justleavingthishere.png](https://github.com/somethingsimade/CurrentAngleV2/blob/main/image.png))
 
 # httpget
 ```lua
