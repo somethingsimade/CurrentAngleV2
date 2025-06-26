@@ -128,6 +128,8 @@ local instantrespawn = (function() if _G["Instant respawn"] == nil then return f
 
 local hiderootpart = (function() if _G["Hide HumanoidRootPart"] == nil then return false else return _G["Hide HumanoidRootPart"] end end)()
 
+local permadeathcharacter = (function() if _G["PermaDeath fake character"] == nil then return false else return _G["PermaDeath fake character"] end end)()
+
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 if not LocalPlayer.Character then
@@ -379,7 +381,8 @@ end
 
 local RunService = game:GetService("RunService")
 
-RunService.PostSimulation:Connect(stepReanimate)
+local postSimConnection = RunService.PostSimulation:Connect(stepReanimate)
+local disableCollisionConnection;
 
 local humanoidnewchar = newChar:WaitForChild("Humanoid")
 
@@ -387,9 +390,20 @@ humanoidnewchar.PlatformStand = true
 humanoidnewchar.AutoRotate = false
 
 if fakecollisions then
-	RunService.PreSimulation:Connect(disableCollisions)
+	disableCollisionConnection = RunService.PreSimulation:Connect(disableCollisions)
 else
-	RunService.PreSimulation:Connect(disableCollisionsWithFakeChar)
+	disableCollisionConnection = RunService.PreSimulation:Connect(disableCollisionsWithFakeChar)
+end
+
+if not permadeathcharacter then
+fakeChar.Humanoid.Died:Once(function()
+	disableCollisionConnection:Disconnect()
+	postSimConnection:Disconnect()
+
+	fakeChar:Destroy()
+	game:GetService("Players").LocalPlayer.Character = newChar
+	newChar:BreakJoints()
+end)
 end
 
 workspace.CurrentCamera.CameraSubject = fakeChar:WaitForChild("Humanoid")
