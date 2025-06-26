@@ -18,7 +18,10 @@ also this was made like a week ago (as the time of writing, check commits)
 https://www.diffchecker.com/NnfMruqk/
 
 ^^^^
-# also would appreciate you guys comparing both oxide and MY v1 (read commits, it was released over a week ago. basically less than 3 people had the version; it is not from kampachi) (DO NOT USE THE SIDE BAR TO COMPARE, USE YOUR EYES)
+# $${\color{red}also\ would\ appreciate\ you\ guys\ comparing\ both\ oxide\ and\ MY\ v1\ (read\ commits,\ it\ was\ released\ over\ a\ week\ ago.\ basically\ less\ than\ 3\ people\ had\ the\ version;\ it\ is\ not\ from\ kampachi)\ (DO\ NOT\ USE\ THE\ SIDE\ BAR\ TO\ COMPARE,\ USE\ YOUR\ EYES)}$$
+^^ if you dont wanna scroll
+# also would appreciate you guys comparing both oxide and MY v1 (read commits, it was released over a week\ ago. basically less than 3 people had the version; it is not from kampachi) (DO NOT USE THE SIDE BAR TO COMPARE, USE YOUR EYES)}$$
+
 
 # httpget
 ```lua
