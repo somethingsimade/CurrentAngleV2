@@ -76,3 +76,6 @@ repeat task.wait() until finished
 
 -- you can put your converted script under here
 ```
+
+#TODO:
+Hat to limbs settings
