@@ -387,7 +387,7 @@ local disableCollisionConnection;
 local steppedMoveRoot;
 
 if hiderootpart then
-steppedMoveRoot = RunService.Stepped:Connect(function()
+steppedMoveRoot = RunService.RenderStepped:Connect(function()
 
 			newcharRoot.CFrame = poscache + Vector3_new(0, 0, math_random(1, 2) / 326.19)
 
