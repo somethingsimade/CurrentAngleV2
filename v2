@@ -393,7 +393,7 @@ steppedMoveRoot = RunService.RenderStepped:Connect(function()
 
 end)
 else
-steppedMoveRoot = RunService.Stepped:Connect(function()
+steppedMoveRoot = RunService.RenderStepped:Connect(function()
 
 				newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 326.19)
 
