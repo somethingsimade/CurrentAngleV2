@@ -44,9 +44,6 @@ Enable if you want the feature
 settings["Hide HumanoidRootPart"] = false --[[ Enabled by default. when enabled, your chat bubble or name tag
 will not appear above your character, but you will have your character immortal in the Fencing arena.
 ]]
-settings["Hide HumanoidRootPart"] = false --[[ Enabled by default. when enabled, your chat bubble or name tag
-will not appear above your character, but you will have your character immortal in the Fencing arena.
-]]
 settings["PermaDeath fake character"] = true --[[When enabled, when you die when the reanimate is on, you
 wont respawn. If you want respawn, set it to false
 ]]
