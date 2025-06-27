@@ -270,6 +270,12 @@ local task_spawn = task.spawn
 local function stepReanimate()
 	--[[task_spawn(function()]]
     if flinging then return end
+
+if hiderootpart then
+	newcharRoot.CFrame = poscache + Vector3_new(0, 0, math_random(1, 2) / 326.19)
+else
+	newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 326.19)
+end
 		--// YES it is unstable. im working on optimizing (later)
 		newcharRoot.Velocity = vector3zero
 		newcharRoot.RotVelocity = vector3zero
@@ -384,24 +390,6 @@ local RunService = game:GetService("RunService")
 
 local postSimConnection = RunService.PostSimulation:Connect(stepReanimate)
 local disableCollisionConnection;
-local steppedMoveRoot;
-
-if hiderootpart then
-steppedMoveRoot = RunService.RenderStepped:Connect(function()
-
-			newcharRoot.CFrame = poscache + Vector3_new(0, 0, math_random(1, 2) / 326.19)
-
-end)
-else
-steppedMoveRoot = RunService.RenderStepped:Connect(function()
-
-				newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 326.19)
-
-
-end)
-	
-
-end
 
 local humanoidnewchar = newChar:WaitForChild("Humanoid")
 
@@ -418,7 +406,6 @@ if not permadeathcharacter then
 fakeChar.Humanoid.Died:Once(function()
 	disableCollisionConnection:Disconnect()
 	postSimConnection:Disconnect()
-    steppedMoveRoot:Disconnect()
 
 	fakeChar:Destroy()
 	game:GetService("Players").LocalPlayer.Character = newChar
