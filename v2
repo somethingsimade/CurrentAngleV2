@@ -134,7 +134,7 @@ local instantrespawn = (function() if _G["Instant respawn"] == nil then return f
 
 local hiderootpart = (function() if _G["Hide HumanoidRootPart"] == nil then return false else return _G["Hide HumanoidRootPart"] end end)()
 
-local permadeathcharacter = (function() if _G["PermaDeath fake character"] == nil then return false else return _G["PermaDeath fake character"] end end)()
+local permadeathcharacter = (function() if _G["PermaDeath fake character"] == nil then return true else return _G["PermaDeath fake character"] end end)()
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
