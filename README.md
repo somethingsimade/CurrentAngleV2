@@ -23,6 +23,8 @@ https://www.diffchecker.com/NnfMruqk/
 https://www.diffchecker.com/NnfMruqk/
 # also would appreciate you guys comparing both oxide and MY v1 (read commits, it was released over a week ago. basically less than 3 people had the version; it is not from kampachi) (DO NOT USE THE SIDE BAR TO COMPARE, USE YOUR EYES
 
+I am not asking for credits, im just trying to prove something. They also deserve credits (kampachi) changed parts of the code too.
+
 
 # httpget
 ```lua
