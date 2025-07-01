@@ -272,9 +272,9 @@ local function stepReanimate()
     if flinging then return end
 
 if hiderootpart then
-	newcharRoot.CFrame = poscache + Vector3_new(0, 0, math_random(1, 2) / 324.19)
+	newcharRoot.CFrame = poscache + Vector3_new(0, 0, math_random(1, 2) / 322.19)
 else
-	newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 324.19)
+	newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, 0, math_random(1, 2) / 322.19)
 end
 		--// YES it is unstable. im working on optimizing (later)
 		newcharRoot.Velocity = vector3zero
