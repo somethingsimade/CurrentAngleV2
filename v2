@@ -238,7 +238,7 @@ end
 
 local newcharTorso = newChar:WaitForChild("Torso")
 local fakecharTorso
-if not r15rig then
+if r15rig then
 fakecharTorso = fakeChar:WaitForChild("UpperTorso")
 else
 fakecharTorso = fakeChar:WaitForChild("Torso")
