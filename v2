@@ -76,7 +76,7 @@ local function LoadUi(seconds)
 	TextLabel_2.TextSize = 28.000
 
 	UIStroke_3.Parent = TextLabel_2
-    task.delay(seconds + 0.5, function()
+    task.delay(seconds + 1.5, function()
         ScreenGui:Destroy()
     end)
 end
