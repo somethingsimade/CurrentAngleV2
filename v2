@@ -58,7 +58,7 @@ local function LoadUi(seconds)
 	TextLabel.Position = UDim2.new(0.265734255, 0, 0, 0)
 	TextLabel.Size = UDim2.new(0, 200, 0, 50)
 	TextLabel.Font = Enum.Font.BuilderSans
-	TextLabel.Text = "MrY7zz's CurrentAngle V2 REANIMATE BY MRY7ZZ"
+	TextLabel.Text = "MrY7zz's CurrentAngle V2 REANIMATE BY MrY7zz"
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextSize = 20.000
 	UIStroke_2.Parent = TextLabel
