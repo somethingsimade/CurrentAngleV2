@@ -49,6 +49,9 @@ will not appear above your character, but you will have your character immortal 
 settings["PermaDeath fake character"] = true --[[When enabled, when you die when the reanimate is on, you
 wont respawn. If you want respawn, set it to false
 ]]
+settings["R15 Reanimate"] = false --[[When enabled, your character when reanimated will be R15.
+So you can run r15 scripts. This does not make the reanimate itself work with R15.
+]]
 
 settings["Names to exclude from transparency"] = {
     --[[ example:
