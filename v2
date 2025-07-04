@@ -374,9 +374,9 @@ local function stepReanimate()
 
 	if hiderootpart then
 		newcharRoot.CFrame = poscache 
-        + Vector3_new(0, math_random(1, 2) / 322.19, 0)
+        + Vector3_new(0, math_random(1, 2) / 319.19, 0)
 	else
-		newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, math_random(1, 2) / 322.19, 0)
+		newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, math_random(1, 2) / 319.19, 0)
 	end
 
 	--// YES it is unstable. im working on optimizing (later)
