@@ -366,7 +366,6 @@ local function RCA6dToCFrame(Motor6D, TargetPart, ReferencePart)
 end
 
 local poscache = CFrame.new(255, 255, 0)
-local counter = 0
 
 local task_spawn = task.spawn
 local function stepReanimate()
@@ -375,21 +374,15 @@ local function stepReanimate()
 
 	if hiderootpart then
 		newcharRoot.CFrame = poscache 
-        + Vector3_new(0, math_random(1, 2) / 331.19, 0)
+        + Vector3_new(0, math_random(1, 2) / 322.19, 0)
 	else
-		newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, math_random(1, 2) / 331.19, 0)
+		newcharRoot.CFrame = fakeChar.HumanoidRootPart.CFrame + Vector3_new(0, math_random(1, 2) / 322.19, 0)
 	end
-    counter += 1
+
 	--// YES it is unstable. im working on optimizing (later)
-    if counter >= 5 then
-    	newcharRoot.Velocity = Vector3_new(0, 5, 0)
-	    newcharRoot.Velocity = Vector3_new(0, 5, 0)
-counter = 0
-else
 
     	newcharRoot.Velocity = vector3zero
-	    newcharRoot.Velocity = vector3zero
-    end
+	newcharRoot.Velocity = vector3zero
 
 	local rootjoint = jointmapping["RootJoint"]
 	RCA6dToCFrame(rootjoint, limbmapping["RootJoint"], newcharRoot)
