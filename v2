@@ -81,6 +81,41 @@ local function LoadUi(seconds)
     end)
 end
 
+local setsimulationradius = setsimulationradius
+if not setsimulationradius then
+	-- setsimulationradius.lua
+-- © 2025 MrY7zz (MIT License)
+
+local Players = game:GetService("Players")
+
+local newIndex
+local Index
+
+--// Extracting __newindex
+xpcall(function()
+	game[{}] = {}
+end, function()
+	newIndex = debug.info(2, "f")
+end)
+
+--// Extracting __index
+xpcall(function()
+	return game[{}]
+end, function()
+	Index = debug.info(2, "f")
+end)
+
+
+setsimulationradius = function(Radius, maxRadius)
+	local LocalPlayer = Index(Players, "LocalPlayer")
+	newIndex(LocalPlayer, "SimulationRadius", Radius)
+	
+	if maxRadius then
+		newIndex(LocalPlayer, "MaximumSimulationRadius", maxRadius)
+	end
+end
+end
+
 if not sethiddenproperty then
 	error("Script is only compatible with environments that have sethiddenproperty")
 	return
