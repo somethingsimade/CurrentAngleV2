@@ -52,6 +52,8 @@ wont respawn. If you want respawn, set it to false
 settings["R15 Reanimate"] = false --[[When enabled, your character when reanimated will be R15.
 So you can run r15 scripts. This does not make the reanimate itself work with R15.
 ]]
+settings["Click Fling"] = false --[[When enabled, will attempt to fling a player
+when you click its character.]]
 
 settings["Names to exclude from transparency"] = {
     --[[ example:
