@@ -14,7 +14,9 @@ end
 
 if not sethiddenproperty then
 	--error("Script is only compatible with environments that have sethiddenproperty")
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/fallback.lua"))()
+	task.spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/fallback.lua"))()
+	end)
 	return
 end
 
