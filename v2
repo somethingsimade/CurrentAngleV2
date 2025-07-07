@@ -17,6 +17,7 @@ if not sethiddenproperty then
 task.spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/fallback.lua"))()
 end)
+repeat task.wait() until finished == true
 	return
 end
 
