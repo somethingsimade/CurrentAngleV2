@@ -12,6 +12,12 @@ if not game.IsLoaded then
 	game.Loaded:Wait()
 end
 
+if not sethiddenproperty then
+	--error("Script is only compatible with environments that have sethiddenproperty")
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/fallback.lua"))()
+	return
+end
+
 local UI = (gethui and gethui()) or (cloneref and cloneref(game:GetService("CoreGui"))) or (pcall(function() return game:GetService("CoreGui").Parent end) and game:GetService("CoreGui")) or game:GetService("Players").LocalPlayer:FindFirstChildOfClass("PlayerGui")
 
 local function LoadUi(seconds)
@@ -118,11 +124,6 @@ setsimulationradius = function(Radius, maxRadius)
 		newIndex(LocalPlayer, "MaximumSimulationRadius", maxRadius)
 	end
 end
-end
-
-if not sethiddenproperty then
-	error("Script is only compatible with environments that have sethiddenproperty")
-	return
 end
 
 local game = game
