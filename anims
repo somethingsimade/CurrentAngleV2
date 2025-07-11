@@ -1,4 +1,4 @@
-local runanim = coroutine.wrap(function()
+spawn(function()
 		local script = fakeChar:FindFirstChild("Animate") or (function()
 			local temp = Instance.new("LocalScript", fakeChar)
 			temp.Name = "Animate"
@@ -589,4 +589,3 @@ local runanim = coroutine.wrap(function()
 
 
 end)
-runanim()
