@@ -1,6 +1,6 @@
 spawn(function()
-		local script = fakeChar:FindFirstChild("Animate") or (function()
-			local temp = Instance.new("LocalScript", fakeChar)
+		local script = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Animate") or (function()
+			local temp = Instance.new("LocalScript", game:GetService("Players").LocalPlayer.Character)
 			temp.Name = "Animate"
 			return temp
 		end)()
